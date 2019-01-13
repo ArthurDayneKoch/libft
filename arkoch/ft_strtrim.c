@@ -20,16 +20,21 @@ char	*ft_strtrim(char const *s)
 	unsigned int	len;
 
 	k = 0;
+	j = 0;
+	str = NULL;
 	if (s)
 	{
 		while (s[k] == ' ' || s[k] == '\n' || s[k] == '\t')
-			++k;
+			k++;
 		len = k;
-		while (!(s[len] == ' ' || s[len] == '\n' || s[len] == '\t'))
+		while (s[len] != '\0')
 			len++;
+		len--;
+		while ((s[len] == ' ' || s[len] == '\n' || s[len] == '\t') && len != 0)
+			len--;
 		if (!(str = (char *)malloc(sizeof(char) * len + 1)))
 			return (NULL);
-		while (s[k] != '\0' && k < len)
+		while (s[k] != '\0' && k < len + 1)
 			str[j++] = s[k++];
 		str[j] = '\0';
 	}

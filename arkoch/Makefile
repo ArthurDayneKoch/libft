@@ -59,7 +59,7 @@ OBJ = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME):
-		gcc -c $(SRCS) -I.
+		gcc -c $(GCCFLAGS) $(SRCS) -I.
 		ar rc $(NAME) $(OBJ)
 		ranlib $(NAME)
 

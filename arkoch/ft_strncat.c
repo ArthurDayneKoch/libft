@@ -19,10 +19,13 @@ char	*ft_strncat(char *restrict s1, const char *restrict s2, size_t n)
 
 	i = 0;
 	j = 0;
-	while (s1[i])
+	i = ft_strlen(s1);
+	while (s2[j] && j < n)
+	{
+		s1[i] = s2[j];
 		i++;
-	while (s1[i] && s2[j] && j <= n)
-		s1[i++] = s2[j++];
+		j++;
+	}
 	s1[i] = '\0';
 	return (s1);
 }

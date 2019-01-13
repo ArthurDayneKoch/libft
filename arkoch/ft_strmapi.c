@@ -19,6 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 
 	i = 0;
+	str = NULL;
 	if (s && f)
 	{
 		len = ft_strlen(s);
